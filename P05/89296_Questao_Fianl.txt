@@ -1,0 +1,8 @@
+A funcao de hash conseguiu o objectivo de espalhar as chaves/strings pelo array ? 
+	Sim, conseguiu porque temos, na maioria, 0 ou 1 colisoes. 
+	O valor medio (80%) significa que espera-se que 80% das posiçoes estejam ocupadas (pelo valor medio).
+	A varianica esta bastante perto um do outro significando que a quantidade de posicoes ocupadas nao anda muito longe do valor medio.
+
+Temos de facto uma distribuicao uniforme das chaves pelos indices do array ?
+	Sim, o que pode ser confirmado pelos graficos que obtivemos.
+	
