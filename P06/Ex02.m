@@ -13,11 +13,11 @@ endfor
 
 #function verification = belongs (BloomF, element, k) 
 for i = 1:length(belong_test)
-  verification = belongs(BloomF, belong{i}, k);
+  verification = belongs(BloomF, belong_test{i}, k);
    if verification == 0
-    printf("\"%s\" Nao pertence\n", belong{i});
+    printf("\"%s\" Nao pertence\n", belong_test{i});
   endif
   if verification == 1
-    printf("\"%s\" Provavelmente pertence\n\n", belong{i});
+    printf("\"%s\" Provavelmente pertence\n\n", belong_test{i});
   endif
 endfor
