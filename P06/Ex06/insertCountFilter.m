@@ -1,4 +1,4 @@
-function [BloomFilter] = insert(BloomFilter, element, k)
+function [BloomFilter] = insertCountFilter(BloomFilter, element, k)
 ##  printf("\nInserido \"%s\"...\n", element);
   len = length(BloomFilter);
   key = element;

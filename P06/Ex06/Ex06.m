@@ -1,23 +1,29 @@
 #Ex 06
-##6) Adapte as suas func¸oes para implementar um ˜ Count Filter. Aplique estas novas func¸oes para conseguir ˜
-##mostrar para uma qualquer palavra de um livro o numero de vezes que ocorre no livro. Esta contagem ´
-##apenas deve ser mostrada para palavras que pertenc¸am ao livro.
 clear all;
 
 ##file = fopen('pg26017.txt');
 file = fopen('small.txt');
-n = 10000;
-k = 3;
+file_content = fscanf(file, '%c', inf);
+wordsF = strsplit(file_content);
+words = strtok(wordsF, ',.!?;-_'); #Remove ',.!?;-_'
+##n = 10000;
+m = length(wordsF);  
+n = m * 15; #size bloomf
+##k = 3;
+k = round((n/m) * log(2)); #
 BloomFilter = initialize(n);
 
 #function [BloomFilter] = insert(BloomFilter, element, k)
-for i = 1 : length(file)
-  BloomFilter = insert(BloomFilter, file(i), k);
+for i = 1 : m
+  BloomFilter = insertCountFilter(BloomFilter, words{i}, k);
 endfor
-
-occurrences = zeros(1, length(file));
+fprintf('Numero de ocorrencias da palavra: \n');  #write the info on the file text
+words = sort(unique(words));
+occurrences = zeros(1, m);
 #function c = count(BloomFilter, word, k)
-for i = 1 : length(file)
-  occurrences(i) = count(BloomFilter, file(i), k);
+for i = 1 : length (words) #with sort and unique
+  curr_word = words{i}
+  occurrences(i) = countFilter(BloomFilter, curr_word, k);
+  fprintf('\t%s -> %d\n', curr_word, occurrences(i));
 endfor
 stem(occurrences);
