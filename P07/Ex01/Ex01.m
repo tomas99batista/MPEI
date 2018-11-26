@@ -2,7 +2,7 @@
 
 #USER_ID  MOVIE_ID  AVALIATION  TIME_STAMP
 
-% Codigo base para gui˜ao PL07 MPEI 2018-2019
+% Codigo base para guiËœao PL07 MPEI 2018-2019
 
 udata=load('u.data'); % Carrega o ficheiro dos dados dos filmes
 
@@ -46,7 +46,7 @@ toc #time to jaccard distances calculation
 delete (h)
 
 %% Com base na distancia, determina pares com distancia inferior a um limiar pre-definido
-threshold =0.4; % limiar de decis˜ao
+threshold =0.4; % limiar de decisËœao
 
 % Array para guardar pares similares (user1, user2, distancia)
 SimilarUsers= zeros(1,3);
