@@ -10,7 +10,6 @@ function [ SimilarUsers ] = similarities(Set, J ,threshold)
     for n2= n1+1:Nu,
       if J(n1, n2) < threshold #se a distancia for menor ao threshold guarda em simUsers
         SimilarUsers(k+1,:)= [Set(n1) Set(n2) J(n1,n2)] #J(n1,n2) = distancia
-##        printf("%d\t%d\t%d\n", users(n1), users(n2), J(n1,n2));
         k= k+1; #num de utilizadores c/ dists < threshold
       end
     end
@@ -24,6 +23,5 @@ function [ SimilarUsers ] = similarities(Set, J ,threshold)
     printf("%d | %d | %f\n", SimilarUsers(i,1), SimilarUsers(i, 2), SimilarUsers(i, 3));
   endfor  
   
- save ("SimUsers.csv", "SimilarUsers", "J", "k"); #ERRO
-
+ save ("SimUsers.csv", "SimilarUsers", "J", "k"); 
 endfunction

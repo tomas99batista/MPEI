@@ -24,9 +24,7 @@ for n = 1:Nu, % Para cada utilizador
 end
 
 %% Calcula a distancia de Jaccard entre todos os pares pela definicao.
-##ERRO AQUI
 J=zeros(Nu, Nu); % array para guardar distancias
-#Guarda user 1 | user 2 | distancia
 
 tic #time to jaccard distances calculation
 h= waitbar(0, "Calculating");
@@ -74,5 +72,5 @@ for i = 1: length(SimilarUsers)
   printf("%d | %d | %f\n", SimilarUsers(i,1), SimilarUsers(i, 2), SimilarUsers(i, 3));
 endfor
 
-save ("SimUsers.csv", "SimilarUsers", "J", "k"); #ERRO
+save ("SimUsers.csv", "SimilarUsers", "J", "k");
 
