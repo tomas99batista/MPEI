@@ -2,7 +2,6 @@ function [J] = distances(Set)
   %% Calcula a distancia de Jaccard entre todos os pares pela definicao.
   Nu = length(Set);
   
-  ##ERRO AQUI
   J=zeros(Nu, Nu); % array para guardar distancias
   #Guarda user 1 | user 2 | distancia
   printf("calculating distances..........\n");
