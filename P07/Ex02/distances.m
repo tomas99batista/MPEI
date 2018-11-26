@@ -3,7 +3,7 @@ function [J] = distances(Set)
   Nu = length(Set);
   
   ##ERRO AQUI
-  J=zeros(Nu, 3); % array para guardar distancias
+  J=zeros(Nu, Nu); % array para guardar distancias
   #Guarda user 1 | user 2 | distancia
   printf("calculating distances..........\n");
   tic #time to jaccard distances calculation

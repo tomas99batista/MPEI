@@ -1,4 +1,4 @@
-#Ex 01
+  #Ex 01
 
 #USER_ID  MOVIE_ID  AVALIATION  TIME_STAMP
 
@@ -25,7 +25,7 @@ end
 
 %% Calcula a distancia de Jaccard entre todos os pares pela definicao.
 ##ERRO AQUI
-J=zeros(Nu, 3); % array para guardar distancias
+J=zeros(Nu, Nu); % array para guardar distancias
 #Guarda user 1 | user 2 | distancia
 
 tic #time to jaccard distances calculation
@@ -54,14 +54,13 @@ threshold =0.4; % limiar de decis˜ao
 SimilarUsers= zeros(1,3);
 
 tic #Time to check similar users
-k= 1;
+k= 0;
 printf("User1\tUser2\tDistance\n");
 for n1= 1:Nu,
   for n2= n1+1:Nu,
     if J(n1, n2) < threshold #se a distancia for menor ao threshold guarda em simUsers
-      SimilarUsers(k,:)= [users(n1) users(n2) J(n1,n2)] #J(n1,n2) = distancia
+      SimilarUsers(k+1,:)= [users(n1) users(n2) J(n1,n2)] #J(n1,n2) = distancia
       #imprime os users c distancia menor ao threshold
-      printf("%d\t%d\t%d\n", users(n1), users(n2), J(n1,n2));
       k= k+1; #++num de utilizadores c/ dists < threshold
     end
   end
@@ -69,7 +68,11 @@ end
 printf("similarities calculated\n");
 toc #Time to check similar users
 printf ("Users with Jaccard dist < threshold (%d): %d\n", threshold, k);
+     
+printf("User1\tUser2\tDistance\n");
+for i = 1: length(SimilarUsers)
+  printf("%d | %d | %f\n", SimilarUsers(i,1), SimilarUsers(i, 2), SimilarUsers(i, 3));
+endfor
 
-#guarda num file csv os pares encontrados e o num de pares (k)
-save ("SimUsers.csv", "SimilarUsers", "J", "k", "\n"); #ERRO
+save ("SimUsers.csv", "SimilarUsers", "J", "k"); #ERRO
 
