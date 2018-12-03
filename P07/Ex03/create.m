@@ -1,4 +1,4 @@
-function [Set] = create (file)
+function [Set, users] = create (file)
   % Codigo base para gui˜ao PL07 MPEI 2018-2019
 
   udata=load('u.data'); % Carrega o ficheiro dos dados dos filmes

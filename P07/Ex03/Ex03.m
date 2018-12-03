@@ -1,13 +1,16 @@
 #Ex 03
 
-#Get random Users from u.data
-
 threshold =0.4; % limiar de decis˜ao
-Set = create("u.data");
-#Num of hashs
-k=10;
-for j = 1: k #For all hash
-  for i = 1: length(countries)
-    key = hash2string(Set(i),)
-  endfor
-endfor
+[Set, users] = create("u.data");
+Nu = length(users);
+
+#professor explicou isto na aula
+#usar p/ ir buscar users
+primo=10001;
+while ~isprime(primo)
+  primo += 2;
+end
+vetor_random = floor(rand(1,100)*primo);
+
+distances = distancesMinHash(Set, Nu, vetor_random, primo)
+sims = similarities(Set, J ,threshold, Nu)
