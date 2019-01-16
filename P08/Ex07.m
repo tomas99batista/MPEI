@@ -3,7 +3,7 @@
 printf("Alinea A)\n");
 printf("Matriz de transicao:\n");
     #A   B   C  
-T=[ 0.8 0.1 0.05;
+H=[ 0.8 0.1 0.05;
     0.2 0.6 0.2;
     0 0.3 0.75];
 disp(H);  
